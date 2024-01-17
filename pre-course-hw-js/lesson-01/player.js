@@ -1,34 +1,38 @@
 let playlist = {
     title: 'Hip-Hop Hits',
-    coverImageUrl: './hip-hop_hits.jpg',
+    coverImageUrl: 'pre-course-hw-js/src/img/artworks-000211040229-3nvgd9-t500x500.jpg',
     info: {
         totalTracksCount: 4,
         totalTracksDurationInSeconds: 733
     },
     tracks: [
         {
-            atristName: 'Eminem',
+            coverTrackUrl: 'C:\Coding\courses\pre-course-hw-js\pre-course-hw-js\src\img\Без названия.jpg',
+            artistName: 'Eminem',
             title: 'Rap God',
             // fileUrl: 'Eminem_-_Rap_God.mp3',
             fileUrl: 'https://dl01.dtmp3.pw/mp3/10893.mp3',
             isHot: false,
         },
         {
-            atristName: '50cent',
+            coverTrackUrl: 'C:\Coding\courses\pre-course-hw-js\pre-course-hw-js\src\img\Без названия.jpg',
+            artistName: '50cent',
             title: 'In da Club',
             // fileUrl: '50_Cent_-_In_Da_Club_FlexyOkay.com.mp3',
             fileUrl: 'https://dl03.dtmp3.pw/mp3/16308.mp3',
             isHot: true,
         },
         {
-            atristName: 'DMX',
+            coverTrackUrl: 'C:\Coding\courses\pre-course-hw-js\pre-course-hw-js\src\img\Без названия.jpg',
+            artistName: 'DMX',
             title: 'X Gon` Give It To Ya',
             // fileUrl: 'DMX_-_X_Gon`_Give_It_To_Ya.mp3',
             fileUrl: 'https://dl03.dtmp3.pw/mp3/20615.mp3',
             isHot: false,
         },
         {
-            atristName: 'Eminem feat 50 Cent, Cashis, Lloyd Banks',
+            coverTrackUrl: 'C:\Coding\courses\pre-course-hw-js\pre-course-hw-js\src\img\Без названия.jpg',
+            artistName: 'Eminem feat 50 Cent, Cashis, Lloyd Banks',
             title: 'You Don`t Know',
             // fileUrl: 'Eminem_feat_50_Cent_-_Cashis_-_Lloyd_Banks_-_You_Don`t_Know.mp3',
             fileUrl: 'https://dl03.dtmp3.pw/mp3/14765.mp3',
@@ -36,3 +40,33 @@ let playlist = {
         }
     ]
 }
+
+
+
+// render
+let playlistImageElement = document.createElement('img');
+playlistImageElement.src = playlist.coverImageUrl;
+document.body.append(playlistImageElement);
+
+let playlistTitleElement = document.createElement('h2');
+playlistTitleElement.append(playlist.title);
+document.body.append(playlistTitleElement);
+
+let trackListElement = document.createElement('ul');
+
+let track1Element = document.createElement('li');
+track1Element.append(playlist.tracks[0].artistName + ' - ' + playlist.tracks[0].title);
+let track2Element = document.createElement('li');
+track2Element.append(playlist.tracks[1].artistName + ' - ' + playlist.tracks[1].title);
+let track3Element = document.createElement('li');
+track3Element.append(playlist.tracks[2].artistName + ' - ' + playlist.tracks[2].title);
+let track4Element = document.createElement('li');
+track4Element.append(playlist.tracks[3].artistName + ' - ' + playlist.tracks[3].title);
+
+trackListElement.append(track1Element);
+trackListElement.append(track2Element);
+trackListElement.append(track3Element);
+trackListElement.append(track4Element);
+
+
+document.body.append(trackListElement);
