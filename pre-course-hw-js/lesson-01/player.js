@@ -42,31 +42,34 @@ let playlist = {
 }
 
 
-
 // render
-let playlistImageElement = document.createElement('img');
-playlistImageElement.src = playlist.coverImageUrl;
-document.body.append(playlistImageElement);
+renderPlaylist(playlist)
 
-let playlistTitleElement = document.createElement('h2');
-playlistTitleElement.append(playlist.title);
-document.body.append(playlistTitleElement);
+function renderPlaylist(playlistForRendering) {
+    let playlistImageElement = document.createElement('img');
+    playlistImageElement.src = playlistForRendering.coverImageUrl;
+    document.body.append(playlistImageElement);
 
-let trackListElement = document.createElement('ul');
+    let playlistTitleElement = document.createElement('h2');
+    playlistTitleElement.append(playlistForRendering.title);
+    document.body.append(playlistTitleElement);
 
-let track1Element = document.createElement('li');
-track1Element.append(playlist.tracks[0].artistName + ' - ' + playlist.tracks[0].title);
-let track2Element = document.createElement('li');
-track2Element.append(playlist.tracks[1].artistName + ' - ' + playlist.tracks[1].title);
-let track3Element = document.createElement('li');
-track3Element.append(playlist.tracks[2].artistName + ' - ' + playlist.tracks[2].title);
-let track4Element = document.createElement('li');
-track4Element.append(playlist.tracks[3].artistName + ' - ' + playlist.tracks[3].title);
+    let trackListElement = document.createElement('ul');
 
-trackListElement.append(track1Element);
-trackListElement.append(track2Element);
-trackListElement.append(track3Element);
-trackListElement.append(track4Element);
+    let track1Element = document.createElement('li');
+    track1Element.append(playlistForRendering.tracks[0].artistName + ' - ' + playlistForRendering.tracks[0].title);
+    let track2Element = document.createElement('li');
+    track2Element.append(playlistForRendering.tracks[1].artistName + ' - ' + playlistForRendering.tracks[1].title);
+    let track3Element = document.createElement('li');
+    track3Element.append(playlistForRendering.tracks[2].artistName + ' - ' + playlistForRendering.tracks[2].title);
+    let track4Element = document.createElement('li');
+    track4Element.append(playlistForRendering.tracks[3].artistName + ' - ' + playlistForRendering.tracks[3].title);
+
+    trackListElement.append(track1Element);
+    trackListElement.append(track2Element);
+    trackListElement.append(track3Element);
+    trackListElement.append(track4Element);
 
 
-document.body.append(trackListElement);
+    document.body.append(trackListElement);
+}
