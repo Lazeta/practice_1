@@ -1,3 +1,16 @@
 * {
     background: yellow;
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding: 5px;
+}
+
+img {
+    max-width: 250px;
 }
