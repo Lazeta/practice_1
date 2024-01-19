@@ -82,11 +82,12 @@ let playlist2 = {
         }
     ]
 }
-
+const container1 = document.querySelector('.container_1');
+const container2 = document.querySelector('.container_2');
 
 // render
 renderPlaylist(playlist)
-renderPlaylist(playlist2)
+renderPlaylist2(playlist2)
 
 function renderPlaylist(playlistForRendering) {
     renderPlaylistHeader(playlistForRendering);
@@ -119,11 +120,13 @@ function renderPlaylistHeader(playlistForRendering){
     // логика отрисовки шапки входного плейлиста
     let playlistImageElement = document.createElement('img');
     playlistImageElement.src = playlistForRendering.coverImageUrl;
-    document.body.append(playlistImageElement);
+    // document.body.append(playlistImageElement);
+    container1.appendChild(playlistImageElement);
 
     let playlistTitleElement = document.createElement('h2');
     playlistTitleElement.append(playlistForRendering.title);
-    document.body.append(playlistTitleElement);
+    // document.body.append(playlistTitleElement);
+    container1.appendChild(playlistTitleElement);
 }
 function renderTrack(inputTrackForRendering){
     // логика отрисовки входного трека
@@ -137,10 +140,74 @@ function renderTrack(inputTrackForRendering){
     trackElement.append(playerElement)
 
     let coverElement = document.createElement('img');
-    coverElement.style.width = '50px';
+    coverElement.style.width = '48px';
     coverElement.src = inputTrackForRendering.coverTrackUrl;
 
     trackElement.append(coverElement)
 
-    document.body.append(trackElement);
+    // document.body.append(trackElement);
+    container1.appendChild(trackElement);
+}
+
+
+
+
+function renderPlaylist2(playlistForRendering) {
+    renderPlaylistHeader2(playlistForRendering);
+
+    renderTrack2(playlistForRendering.tracks[0]);
+    renderTrack2(playlistForRendering.tracks[1]);
+    renderTrack2(playlistForRendering.tracks[2]);
+    renderTrack2(playlistForRendering.tracks[3]);
+
+    // let trackListElement = document.createElement('ul');
+
+    // let track1Element = document.createElement('li');
+    // track1Element.append(playlistForRendering.tracks[0].artistName + ' - ' + playlistForRendering.tracks[0].title);
+    // let track2Element = document.createElement('li');
+    // track2Element.append(playlistForRendering.tracks[1].artistName + ' - ' + playlistForRendering.tracks[1].title);
+    // let track3Element = document.createElement('li');
+    // track3Element.append(playlistForRendering.tracks[2].artistName + ' - ' + playlistForRendering.tracks[2].title);
+    // let track4Element = document.createElement('li');
+    // track4Element.append(playlistForRendering.tracks[3].artistName + ' - ' + playlistForRendering.tracks[3].title);
+
+    // trackListElement.append(track1Element);
+    // trackListElement.append(track2Element);
+    // trackListElement.append(track3Element);
+    // trackListElement.append(track4Element);
+
+    // document.body.append(trackListElement);
+}
+
+function renderPlaylistHeader2(playlistForRendering){
+    // логика отрисовки шапки входного плейлиста
+    let playlistImageElement = document.createElement('img');
+    playlistImageElement.src = playlistForRendering.coverImageUrl;
+    // document.body.append(playlistImageElement);
+    container2.appendChild(playlistImageElement);
+
+    let playlistTitleElement = document.createElement('h2');
+    playlistTitleElement.append(playlistForRendering.title);
+    // document.body.append(playlistTitleElement);
+    container2.appendChild(playlistTitleElement);
+}
+function renderTrack2(inputTrackForRendering){
+    // логика отрисовки входного трека
+    let trackElement = document.createElement('div');
+    trackElement.append(inputTrackForRendering.artistName + ' - ' + inputTrackForRendering.title);
+
+    let playerElement = document.createElement('audio');
+    playerElement.src = inputTrackForRendering.fileUrl;
+    playerElement.controls = true;
+
+    trackElement.append(playerElement)
+
+    let coverElement = document.createElement('img');
+    coverElement.style.width = '48px';
+    coverElement.src = inputTrackForRendering.coverTrackUrl;
+
+    trackElement.append(coverElement)
+
+    // document.body.append(trackElement);
+    container2.appendChild(trackElement);
 }
