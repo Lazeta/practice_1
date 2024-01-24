@@ -1,15 +1,15 @@
 * {
-    background: rgb(41, 41, 37);
+    /* background: rgb(41, 41, 37); */
     box-sizing: border-box;
 }
 
-div {
+/* div {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 
     padding: 5px;
-}
+} */
 
 img {
     max-width: 170px;
