@@ -36,6 +36,29 @@ let playlist = {
 // render
 renderPlaylist(playlist)
 
-function renderPlaylist(playlistForRendering) {
-    
+function renderPlaylist(playlistForRendering){
+    renderPlaylistHeader(playlistForRendering);
+    renderPlaylistTracks(playlistForRendering);
 }
+
+function renderPlaylistHeader(playlistForRendering){
+    const playlistTitleElement = document.createElement('h2');
+    playlistTitleElement.append(playlistForRendering.title);
+    document.body.append(playlistTitleElement);
+
+    const coverElement = document.createElement('img');
+    coverElement.src = playlistForRendering.coverUrl;
+    document.body.append(coverElement)
+}
+
+function renderPlaylistHeaderCover(playlistForRendering){}
+
+function renderPlaylistHeaderTitle(playlistForRendering){}
+
+function renderPlaylistTracks(playlistForRendering){
+    const playlistElement = document.createElement('h2');
+    playlistElement.append("tracks will be here");
+    document.body.append(playlistElement);
+}
+ 
+function renderPlaylistTrack(inputTrackForRendering){}
