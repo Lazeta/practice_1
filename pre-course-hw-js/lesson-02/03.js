@@ -42,23 +42,32 @@ function renderPlaylist(playlistForRendering){
 }
 
 function renderPlaylistHeader(playlistForRendering){
-    const playlistTitleElement = document.createElement('h2');
-    playlistTitleElement.append(playlistForRendering.title);
-    document.body.append(playlistTitleElement);
+    renderPlaylistHeaderTitle(playlistForRendering)
+    renderPlaylistHeaderCover(playlistForRendering)
+}
 
+function renderPlaylistHeaderCover(playlistForRendering) {
     const coverElement = document.createElement('img');
     coverElement.src = playlistForRendering.coverUrl;
     document.body.append(coverElement)
 }
 
-function renderPlaylistHeaderCover(playlistForRendering){}
-
-function renderPlaylistHeaderTitle(playlistForRendering){}
-
-function renderPlaylistTracks(playlistForRendering){
-    const playlistElement = document.createElement('h2');
-    playlistElement.append("tracks will be here");
-    document.body.append(playlistElement);
+function renderPlaylistHeaderTitle(playlistForRendering) {
+    const playlistTitleElement = document.createElement('h2');
+    playlistTitleElement.append(playlistForRendering.title);
+    document.body.append(playlistTitleElement);
 }
- 
-function renderPlaylistTrack(inputTrackForRendering){}
+
+function renderPlaylistTracks(playlistForRendering) {
+    renderPlaylistTrack(playlistForRendering.tracks[0]);
+    renderPlaylistTrack(playlistForRendering.tracks[1]);
+} 
+function renderPlaylistTrack(inputTrackForRendering) {
+    const trackElement = document.createElement('div');
+    const trackTitleElement = document.createElement('span');
+    trackElement.append("tracks will be here");
+    trackTitleElement.append(inputTrackForRendering.executor + " - " + inputTrackForRendering.titleTrack)
+    trackElement.append(trackTitleElement);
+
+    document.body.append(trackElement)
+}
