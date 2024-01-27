@@ -62,11 +62,11 @@ function renderPlaylistTracks(playlistForRendering) {
     for (let i = 0; i < playlistForRendering.tracks.length; i++) {
         const track = playlistForRendering.tracks[i];
         renderPlaylistTrack(track);
-    }
-    
+    } 
     // renderPlaylistTrack(playlistForRendering.tracks[0]);
     // renderPlaylistTrack(playlistForRendering.tracks[1]);
 } 
+
 function renderPlaylistTrack(inputTrackForRendering) {
     const trackElement = document.createElement('div');
     const trackTitleElement = document.createElement('span');
@@ -75,4 +75,4 @@ function renderPlaylistTrack(inputTrackForRendering) {
     trackElement.append(trackTitleElement);
 
     document.body.append(trackElement)
-}а
+}
