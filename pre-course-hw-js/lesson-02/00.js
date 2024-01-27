@@ -34,3 +34,13 @@ console.log(s3, isValid(s3));
 console.log(s4, isValid(s4));
 console.log(s5, isValid(s5));
 console.log(s6, isValid(s6));
+
+let objects = [
+    { name: 'Bob' },
+    { name: 'Anna' },
+    { name: 'Tom' }
+]
+for (let i = objects.lenght - 1; i >= 0; i--){
+    const object = objects[i]
+    console.log(object.name)
+}
